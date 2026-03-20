@@ -1,6 +1,7 @@
 id: ext_masscan
 name: Masscan 高速端口扫描
 description: "使用 masscan 进行大规模高速端口扫描，适合大范围 CIDR 目标"
+homepage: "https://github.com/robertdavidgraham/masscan"
 category: scan
 binary: masscan
 version_cmd: "masscan --version"

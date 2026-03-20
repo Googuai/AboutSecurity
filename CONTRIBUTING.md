@@ -52,6 +52,7 @@ AboutSecurity/
 id: ext_工具名                  # 工具唯一标识，必须以 ext_ 开头
 name: 工具显示名称               # 中文名，给用户看的
 description: "工具功能描述"       # AI 用这段文字决定是否调用此工具，写清楚能做什么
+homepage: "https://github.com/xxx/xxx"  # 工具官网或 GitHub 地址，方便用户了解和安装
 category: scan                  # 分类，见下方枚举
 binary: nmap                    # 可执行文件名（从 PATH 查找）
 binary_path: ""                 # 可选：绝对路径，如 /usr/local/bin/nmap
@@ -221,6 +222,7 @@ command_template: |
 id: ext_subfinder
 name: Subfinder 子域名发现
 description: "使用 subfinder 被动发现子域名，速度快、覆盖广，适合大规模侦察"
+homepage: "https://github.com/projectdiscovery/subfinder"
 category: scan
 binary: subfinder
 version_cmd: "subfinder -version"
@@ -259,6 +261,7 @@ constraints:
 id: ext_nuclei
 name: Nuclei 漏洞扫描
 description: "使用 nuclei 进行基于模板的漏洞扫描，支持数千个 CVE 和暴露检测模板"
+homepage: "https://github.com/projectdiscovery/nuclei"
 category: poc
 binary: nuclei
 version_cmd: "nuclei -version"
@@ -316,6 +319,7 @@ constraints:
 id: ext_ffuf
 name: ffuf Web Fuzz
 description: "使用 ffuf 进行高速 Web 路径和参数 Fuzz"
+homepage: "https://github.com/ffuf/ffuf"
 category: brute
 binary: ffuf
 version_cmd: "ffuf -V"
@@ -372,6 +376,7 @@ constraints:
 
 - [ ] `id` 以 `ext_` 开头，全局唯一
 - [ ] `description` 清楚说明工具能做什么（AI 据此决定是否调用）
+- [ ] `homepage` 填写工具的 GitHub 地址或官网，方便用户了解和安装
 - [ ] 至少有一个 `required: true` 的 `target` 参数
 - [ ] `command_template` 渲染后是合法的命令行
 - [ ] `output.parser` 与工具实际输出格式匹配

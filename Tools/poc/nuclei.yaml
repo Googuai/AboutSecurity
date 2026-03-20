@@ -1,6 +1,7 @@
 id: ext_nuclei
 name: Nuclei 漏洞扫描
 description: "使用 nuclei 基于 YAML 模板进行漏洞扫描，支持数千个 CVE、暴露检测、错误配置检测模板，零误报"
+homepage: "https://github.com/projectdiscovery/nuclei"
 category: poc
 binary: nuclei
 version_cmd: "nuclei -version"

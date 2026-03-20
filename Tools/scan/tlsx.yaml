@@ -1,6 +1,7 @@
 id: ext_tlsx
 name: tlsx TLS 探测
 description: "使用 tlsx 进行 TLS 证书和配置分析，提取 SAN/CN、TLS 版本、加密套件、JARM/JA3 指纹，检测证书错误配置"
+homepage: "https://github.com/projectdiscovery/tlsx"
 category: scan
 binary: tlsx
 version_cmd: "tlsx -version"

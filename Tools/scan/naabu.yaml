@@ -1,6 +1,7 @@
 id: ext_naabu
 name: Naabu 端口扫描
 description: "使用 naabu 进行快速 SYN/CONNECT 端口扫描，支持 IPv4/IPv6、CDN 排除、nmap 集成，轻量高效"
+homepage: "https://github.com/projectdiscovery/naabu"
 category: scan
 binary: naabu
 version_cmd: "naabu -version"

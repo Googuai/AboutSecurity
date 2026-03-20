@@ -1,6 +1,7 @@
 id: ext_uncover
 name: Uncover 搜索引擎聚合
 description: "使用 uncover 聚合查询 Shodan/Censys/FOFA/Hunter/Quake/ZoomEye 等搜索引擎，快速发现暴露资产"
+homepage: "https://github.com/projectdiscovery/uncover"
 category: osint
 binary: uncover
 version_cmd: "uncover -version"

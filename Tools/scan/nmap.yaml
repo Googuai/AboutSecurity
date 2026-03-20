@@ -1,6 +1,7 @@
 id: ext_nmap_scan
 name: Nmap 端口扫描
 description: "使用 nmap 执行端口扫描，支持 SYN/TCP/UDP 多种模式，比内置 naabu 更精细"
+homepage: "https://nmap.org"
 category: scan
 binary: nmap
 version_cmd: "nmap --version"

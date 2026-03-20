@@ -1,6 +1,7 @@
 id: ext_katana
 name: Katana Web 爬虫
 description: "使用 katana 进行 Web 爬取，支持标准和无头浏览器模式，自动 JavaScript 解析，提取 URL/表单/XHR 请求"
+homepage: "https://github.com/projectdiscovery/katana"
 category: scan
 binary: katana
 version_cmd: "katana -version"

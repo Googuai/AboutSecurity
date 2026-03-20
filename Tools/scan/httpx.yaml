@@ -1,6 +1,7 @@
 id: ext_httpx
 name: httpx HTTP 探测
 description: "使用 httpx 进行 HTTP 存活探测，返回状态码、标题、Content-Length、技术栈、IP、CDN 等信息，支持 JSON 输出"
+homepage: "https://github.com/projectdiscovery/httpx"
 category: scan
 binary: httpx
 version_cmd: "httpx -version"

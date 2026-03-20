@@ -1,6 +1,7 @@
 id: ext_dnsx
 name: dnsx DNS 查询
 description: "使用 dnsx 进行批量 DNS 记录查询和解析，支持 A/AAAA/CNAME/NS/MX/TXT/SOA 等记录类型，自动通配符过滤"
+homepage: "https://github.com/projectdiscovery/dnsx"
 category: scan
 binary: dnsx
 version_cmd: "dnsx -version"
