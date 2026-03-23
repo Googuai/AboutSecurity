@@ -5,7 +5,7 @@ metadata:
   tags: "ctf,flag,验证,benchmark,capture the flag,靶场,flag验证,sqli,rce,lfi,file-read,提交"
   difficulty: "easy"
   icon: "🏁"
-  category: "通用方法论"
+  category: "CTF"
 ---
 
 # CTF Flag 验证方法论
