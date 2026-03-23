@@ -102,7 +102,8 @@ def run_with_claude(prompt: str, timeout: int = 120, model: str = None) -> dict:
         try:
             output_data = json.loads(result.stdout)
             output_text = output_data.get("result", result.stdout)
-            tokens = output_data.get("total_tokens", 0)
+            usage = output_data.get("usage", {})
+            tokens = usage.get("input_tokens", 0) + usage.get("output_tokens", 0)
         except (json.JSONDecodeError, TypeError):
             output_text = result.stdout
             tokens = 0
