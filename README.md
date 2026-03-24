@@ -23,13 +23,14 @@
     * SSI
     * XSS
     * XXE
-* **Skills** — AI Agent 技能方法论 (51 skills)
+* **Skills** — AI Agent 技能方法论 (55 skills)
     * recon (5) : 侦察类 — 资产侦察、被动信息收集、子域名深挖、目标画像、社会工程
     * exploit (26) : 漏洞利用类 — SQL 注入、XSS、SSTI、文件上传、反序列化、JWT、GraphQL、SSRF/XXE、CORS、CSRF、OAuth、WebSocket、竞态条件、缓存投毒/请求走私等
     * ctf (5) : CTF 竞赛类 — Web 解题方法论、CTF 侦察、源码审计、Flag 搜索、Flag 校验
     * postexploit (6) : 后渗透类 — Linux/Windows 后渗透、提权检查、凭据喷射、横向移动、持久化
     * lateral (3) : 内网渗透类 — AD 域攻击、内网侦察、多层网络穿透
     * cloud (2) : 云环境类 — 云元数据利用、IAM 权限审计与提权
+    * evasion (4) : 免杀对抗类 — C2 框架免杀、Shellcode Loader 生成、免杀技术整合、安全研究
     * general (4) : 综合类 — 红队评估、移动后端 API、报告生成、供应链审计
     * 📊 **Skill Benchmark**: `python scripts/bench-skill.py --all` — A/B 测试 Skill 对 Agent 的实际效果
 * **Tools** — 外部工具声明式 YAML 配置

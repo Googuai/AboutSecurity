@@ -1,0 +1,18 @@
+{
+  "skill_id": "c2-evasion-methodology",
+  "version": "1.0",
+  "scenarios": [
+    {
+      "id": "eval-c2-yara-analysis",
+      "name": "YARA 规则分析与免杀",
+      "description": "给定 C2 框架源码和 YARA 规则，分析检测特征并提出修改方案",
+      "expected": ["逐规则分析 pattern", "定位源码位置", "提出编译器标志优先的免杀策略"]
+    },
+    {
+      "id": "eval-c2-string-obfuscation",
+      "name": "字符串混淆",
+      "description": "识别 C2 源码中的敏感字符串并应用 XOR 混淆",
+      "expected": ["识别所有硬编码字符串", "使用 XOR 或其他方式加密", "验证编译通过"]
+    }
+  ]
+}

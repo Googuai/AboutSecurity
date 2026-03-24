@@ -1,0 +1,18 @@
+{
+  "skill_id": "shellcode-loader-generate",
+  "version": "1.0",
+  "scenarios": [
+    {
+      "id": "eval-loader-simple-c",
+      "name": "简单 C Loader 生成",
+      "description": "使用 VirtualAlloc+memcpy+CreateThread 组合生成 C loader",
+      "expected": ["查询组件库", "避免重复场景", "编译通过", "记录到场景库"]
+    },
+    {
+      "id": "eval-loader-complex-rust",
+      "name": "复杂 Rust Loader 生成",
+      "description": "使用 NtAllocateVirtualMemory+Fiber 组合生成 Rust loader",
+      "expected": ["选择 complex 组件", "Rust 交叉编译通过", "错误处理完整"]
+    }
+  ]
+}

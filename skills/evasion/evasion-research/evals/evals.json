@@ -1,0 +1,12 @@
+{
+  "skill_id": "evasion-research",
+  "version": "1.0",
+  "scenarios": [
+    {
+      "id": "eval-research-loader",
+      "name": "Loader 技术搜索",
+      "description": "搜索 GitHub 上新的 shellcode loader 技术并入库",
+      "expected": ["使用 gh search 找到仓库", "分析代码模式", "去重检查", "入库新技术"]
+    }
+  ]
+}

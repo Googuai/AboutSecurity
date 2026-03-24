@@ -1,0 +1,18 @@
+{
+  "skill_id": "evasion-technique-integrate",
+  "version": "1.0",
+  "scenarios": [
+    {
+      "id": "eval-integrate-rwx-flip",
+      "name": "RWX 权限翻转",
+      "description": "将使用 PAGE_EXECUTE_READWRITE 的 Loader 修改为 RW→RX 两步权限",
+      "expected": ["识别 RWX 使用", "应用权限翻转", "编译通过", "输出变更报告"]
+    },
+    {
+      "id": "eval-integrate-api-hashing",
+      "name": "API Hashing 整合",
+      "description": "将明文 API 调用替换为 hash 查找",
+      "expected": ["识别所有明文 API", "实现 hash 函数", "替换调用", "编译通过"]
+    }
+  ]
+}

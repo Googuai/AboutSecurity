@@ -1,5 +1,5 @@
 ---
-name: 本地资源库导航
+name: local-resources
 description: 字典库(Dic)、Payload库、POC库的结构和使用方法。使用 ffuf/dirsearch/hydra 等外部工具前必读。
 metadata:
   category: general
