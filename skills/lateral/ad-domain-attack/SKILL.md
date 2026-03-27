@@ -3,9 +3,7 @@ name: ad-domain-attack
 description: "Active Directory 域环境攻击全链路。当目标主机在域环境中（systeminfo 显示 Domain 非 WORKGROUP）、发现 88/389/636 端口、或获取到域用户凭据时使用。覆盖域信息收集、用户枚举、Kerberoasting、AS-REP Roasting、委派攻击、ACL 滥用、DCSync、Golden/Silver Ticket"
 metadata:
   tags: "ad,domain,kerberos,kerberoasting,asrep,delegation,dcsync,golden ticket,acl,域,域控,横向移动,ntlm,bloodhound"
-  difficulty: "hard"
-  icon: "🏰"
-  category: "横向移动"
+  category: "lateral"
 ---
 
 # AD 域攻击方法论

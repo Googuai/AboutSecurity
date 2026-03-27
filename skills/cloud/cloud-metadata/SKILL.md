@@ -3,9 +3,7 @@ name: cloud-metadata
 description: "云元数据利用。当通过 SSRF 或已获取的 shell 可以访问云实例元数据服务时使用。覆盖 AWS/Azure/GCP/阿里云的元数据端点、IAM 凭据提取、IMDSv2 绕过、从元数据到云服务枚举的完整攻击链"
 metadata:
   tags: "cloud,metadata,ssrf,iam,aws,azure,gcp,aliyun,imds,元数据,云安全"
-  difficulty: "hard"
-  icon: "☁️"
-  category: "云环境"
+  category: "cloud"
 ---
 
 # 云元数据利用方法论

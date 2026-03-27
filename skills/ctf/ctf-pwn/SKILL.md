@@ -3,9 +3,7 @@ name: ctf-pwn
 description: "CTF 二进制漏洞利用(Pwn)技术。当挑战提供 ELF/PE 可执行文件并开放 nc 端口、存在栈溢出/堆溢出/格式化字符串/UAF 漏洞时使用。覆盖 ROP 链构造、堆利用(tcache/House of Orange/Spirit)、内核利用、seccomp 沙箱逃逸、pwntools 自动化利用脚本编写"
 metadata:
   tags: "ctf,pwn,binary,exploit,overflow,rop,heap,kernel,shellcode,格式化字符串"
-  difficulty: "hard"
-  icon: "💥"
-  category: "CTF"
+  category: "ctf"
 ---
 
 # CTF 二进制漏洞利用 (Pwn)

@@ -3,9 +3,7 @@ name: social-engineering
 description: "目标组织的人员情报收集与社工攻击准备。当需要收集目标邮箱格式、关键人员信息、组织架构，或准备钓鱼攻击/水坑攻击/凭据猜测时使用。适合渗透测试中的社会工程学攻击准备阶段"
 metadata:
   tags: "osint,social,email,people,钓鱼,社工,邮箱,人员,organization,phishing"
-  difficulty: "easy"
-  icon: "👥"
-  category: "侦察"
+  category: "recon"
 ---
 
 # 社会工程学情报收集方法论

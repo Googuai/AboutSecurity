@@ -3,9 +3,7 @@ name: ctf-web-recon
 description: "CTF Web 挑战专用侦察方法。当面对 CTF 靶场目标需要快速发现攻击入口时使用。与真实渗透的 recon 不同——CTF 是单个应用、有意留线索、侦察应在 2-3 轮内完成。覆盖源码泄露、备份文件、隐藏路径、页面线索提取"
 metadata:
   tags: "ctf,recon,侦察,源码泄露,备份文件,robots,git,web,enumeration"
-  difficulty: "easy"
-  icon: "🔦"
-  category: "CTF"
+  category: "ctf"
 ---
 
 # CTF Web 侦察方法论
@@ -16,7 +14,9 @@ CTF 侦察和真实渗透的侦察本质不同：
 
 核心原则：**2-3 轮内完成侦察**，不要在侦察上花太多 rounds。
 
-## Step 1: 首页分析
+## Phase 1: 侦察流程
+
+### 1.1 首页分析
 
 用 `http_request` GET 首页，仔细检查响应：
 
@@ -33,7 +33,7 @@ CTF 侦察和真实渗透的侦察本质不同：
 - `<script src="...">` — JS 文件路径暴露项目结构
 - 页面文字 — 有时提示就在页面内容里（"Try harder", "Look deeper"）
 
-## Step 2: 关键路径检查
+### 1.2 关键路径检查
 
 按优先级依次检查（有发现就分析，不要机械地全部检查）：
 
@@ -64,7 +64,7 @@ CTF 侦察和真实渗透的侦察本质不同：
 /api, /api/v1, /graphql
 ```
 
-## Step 3: JavaScript 分析
+### 1.3 JavaScript 分析
 
 如果首页引用了 JS 文件，用 `http_request` 获取它们，搜索：
 
@@ -75,7 +75,7 @@ CTF 侦察和真实渗透的侦察本质不同：
 
 **技巧**：压缩/混淆的 JS 不需要完全理解，搜索关键字符串即可。
 
-## Step 4: 技术栈确认
+### 1.4 技术栈确认
 
 通过前面的信息确认技术栈，这决定了后续的漏洞利用方向：
 
@@ -87,13 +87,15 @@ CTF 侦察和真实渗透的侦察本质不同：
 | `_csrf_token`, `csrfmiddlewaretoken` | Python Django | SSTI(Jinja2) |
 | `session=eyJ` | Python Flask | Flask session 伪造 |
 
-## 不要做的事
+## Phase 2: 侦察补充
+
+### 2.1 不要做的事
 - ❌ 不要对 CTF 目标做子域名枚举（只有一个应用）
 - ❌ 不要做大规模端口扫描（通常只有一个端口）
 - ❌ 不要花超过 3 轮在侦察上（线索不在侦察里就在功能点里）
 
-## 技术指纹判断
+### 2.2 技术指纹判断
 - NoSQL/MongoDB 特征：尝试 `$gt`、`$ne` 等 NoSQL 注入操作符
 
-## CTF 效率
+### 2.3 CTF 效率
 - CTF 单应用：不做子域名枚举、不做大规模端口扫描

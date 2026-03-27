@@ -3,9 +3,7 @@ name: report-generate
 description: "渗透测试报告生成。当完成安全评估需要输出正式报告时使用。覆盖报告结构模板、风险评级标准（CVSS）、漏洞描述写法、修复建议规范。适用于正式渗透测试报告和红队评估报告"
 metadata:
   tags: "report,报告,summary,documentation,渗透测试报告,风险评级,修复建议"
-  difficulty: "easy"
-  icon: "📝"
-  category: "综合"
+  category: "general"
 ---
 
 # 渗透测试报告生成方法论

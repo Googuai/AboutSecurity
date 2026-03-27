@@ -3,9 +3,7 @@ name: ctf-flag-hunting
 description: "CTF 挑战中的 Flag 搜索策略。当已获取命令执行/文件读取/数据库访问权限但不知道 flag 在哪里时使用。覆盖文件系统、数据库、环境变量、源码、内存等所有 flag 可能的存储位置。按成功率排序的搜索优先级"
 metadata:
   tags: "ctf,flag,搜索,hunting,文件系统,数据库,环境变量,rce,getflag"
-  difficulty: "easy"
-  icon: "🎯"
-  category: "CTF"
+  category: "ctf"
 ---
 
 # CTF Flag 搜索策略
