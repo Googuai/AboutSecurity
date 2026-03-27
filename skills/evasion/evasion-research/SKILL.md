@@ -1,6 +1,6 @@
 ---
 name: evasion-research
-description: "GitHub 安全研究方法论：搜索 GitHub 上的免杀/Loader/C2 技术仓库，分析代码模式，提取新技术入库。当需要搜索新免杀技术、分析开源仓库、更新知识库时使用。"
+description: "GitHub 安全研究方法论：搜索 GitHub 上的免杀/Loader/C2 技术仓库，分析代码模式，提取新技术入库。当知识库中没有针对当前检测环境的免杀技术时使用——先搜索 GitHub 高星仓库，分析代码后写入 evasion-techniques-db.json 或 loader-components-db.json 入库"
 metadata:
   tags: "research,github,evasion,loader,shellcode,technique,knowledge-base,规避研究,检测绕过,bypass研究,规避检测"
   category: "evasion"

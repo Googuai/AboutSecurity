@@ -1,6 +1,6 @@
 ---
 name: shellcode-loader-generate
-description: "Shellcode Loader 组合生成：从知识库选择 storage/allocator/copier/executor 四类组件组合生成 C/C++/Rust Loader。当需要生成 shellcode loader、批量生成、组合不同加载技术时使用。"
+description: "Shellcode Loader 组合生成：从知识库选择 storage/allocator/copier/executor 四类组件组合生成 C/C++/Rust Loader。当已获 shellcode、需要生成可在目标环境运行的 Loader 二进制时使用。先读 references/loader-scenarios.json 确认不存在重复场景，再选择 4 组件组合生成"
 metadata:
   tags: "shellcode,loader,generate,evasion,windows,c,cpp,rust,VirtualAlloc,CreateThread"
   category: "evasion"

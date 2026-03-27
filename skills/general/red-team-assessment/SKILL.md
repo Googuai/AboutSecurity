@@ -1,6 +1,6 @@
 ---
 name: red-team-assessment
-description: "红队评估全流程方法论。当需要对目标执行端到端的安全评估（被动侦察→主动侦察→漏洞发现→利用验证→报告输出）时使用。适用于外网打点、安全评估项目、定期渗透测试。本技能是流程编排——具体漏洞利用技术引用其他专项 skills"
+description: "红队评估全流程方法论。当开始一个完整的渗透测试项目/红队评估、需要从侦察到报告的完整流程编排时使用。适用于外网打点、安全评估项目、定期渗透测试。本技能负责任务调度——具体漏洞利用调用专项 skills，不要在本技能内做深度漏洞测试"
 metadata:
   tags: "red-team,assessment,渗透测试,安全评估,全流程,外网打点,automation,pentest"
   category: "general"

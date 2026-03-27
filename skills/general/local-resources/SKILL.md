@@ -1,6 +1,6 @@
 ---
 name: local-resources
-description: "本地资源库导航——字典库(Dic)、Payload库、POC库的结构和使用方法。当需要使用 ffuf/dirsearch 目录爆破、hydra 密码爆破、或构造 Fuzz payload 时必读。覆盖字典选择策略、payload 模板调用、POC 库搜索方法，避免硬编码错误路径"
+description: "本地资源库导航——字典库(Dic)、Payload库、POC库的结构和使用方法。当需要使用 ffuf/dirsearch 目录爆破、hydra 密码爆破、或构造 Fuzz payload 时必读。覆盖字典选择策略、payload 模板调用、POC 库搜索方法。禁止硬编码路径——必须用 dict_resolve 获取绝对路径"
 metadata:
   category: "general"
   tags: "dictionary,wordlist,payload,poc,ffuf,dirsearch,hydra,resource,字典,工具"

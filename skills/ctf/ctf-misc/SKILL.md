@@ -1,6 +1,6 @@
 ---
 name: ctf-misc
-description: "CTF 杂项挑战技术。用于编码谜题、Python/Bash 沙箱逃逸、RF/SDR 信号处理、DNS 利用、游戏/VM 逆向、K8s RBAC、浮点数技巧、Z3 约束求解、博弈论等不属于其他分类的 CTF 挑战"
+description: "CTF 杂项挑战技术。当遇到编码谜题、Python/Bash 沙箱逃逸、RF/SDR 信号、游戏/VM 逆向、K8s RBAC、浮点数技巧、Z3 约束求解、博弈论等不属于 pwn/crypto/web/reverse/forensics/osint 的 CTF 挑战时使用。先排除其他分类后再使用本技能"
 metadata:
   tags: "ctf,misc,杂项,pyjail,bashjail,encoding,sdr,dns,game,z3"
   category: "ctf"

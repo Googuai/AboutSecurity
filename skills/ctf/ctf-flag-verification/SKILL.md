@@ -1,6 +1,6 @@
 ---
 name: ctf-flag-verification
-description: "CTF/靶场 Flag 提取后的强制验证流程。在 benchmark 模式或任务目标包含 FLAG{} 时自动触发。防止 LLM 因字符解析错误提交错误 flag。覆盖 SQL 注入分段提取、命令执行输出截断、文件读取编码、Web 页面解析等所有 flag 提取场景。当你通过任何方式获取到 flag 后，务必使用此方法论验证"
+description: "CTF/靶场 Flag 提取后的强制验证流程。当通过任何方式（SQL注入/RCE/文件读取/源码审计）获取到 flag 后使用。防止因字符截断、编码错误、HTML实体等原因导致提交错误 flag。覆盖 SQL 注入分段提取、命令执行输出截断、文件读取编码、Web 页面解析等所有 flag 提取场景。务必在提交前使用此方法论验证"
 metadata:
   tags: "ctf,flag,验证,benchmark,capture the flag,靶场,flag验证,sqli,rce,lfi,file-read,提交"
   category: "ctf"

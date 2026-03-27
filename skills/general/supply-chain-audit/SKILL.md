@@ -1,6 +1,6 @@
 ---
 name: supply-chain-audit
-description: "供应链安全审计。当需要检查目标使用的第三方组件、JS 库、CDN 资源、SaaS 服务的安全风险时使用。覆盖组件版本发现、CVE 关联、子域名接管、JS 库投毒检测、CDN 安全配置评估"
+description: "供应链安全审计。当指纹识别发现 WordPress/Jenkins/Struts/Django 等已知框架、或发现 /package.json /composer.json /package-lock.json /Gemfile 等依赖声明文件时使用。框架和组件版本直接关联 CVE——这是利用链的第一步，也是最容易忽略的攻击面"
 metadata:
   tags: "supply-chain,component,cdn,third-party,js,npm,subdomain-takeover,供应链,组件安全"
   category: "general"
