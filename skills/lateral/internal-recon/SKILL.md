@@ -14,6 +14,7 @@ metadata:
 
 - 存活探测命令、端口→服务→价值映射表、域控/数据库定位 → [references/network-mapping.md](references/network-mapping.md)
 - fscan 详细用法（弱口令爆破、POC 检测、代理扫描）→ 加载 `fscan-scan` 技能
+- **工具投递方法**（怎么把后渗透 需要的工具 传到目标上、为什么要在目标上执行而非本地）→ 加载 `tool-delivery` 技能
 
 ## Phase 1: 当前位置分析
 
