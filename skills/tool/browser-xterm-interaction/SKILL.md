@@ -1,25 +1,21 @@
 ---
 name: browser-xterm-interaction
-description: "Playwright Browser MCP 与 xterm.js 终端交互方法论。当需要通过浏览器操作网页内嵌的终端（xterm.js / terminal emulator）时使用。包含终端内容读取、命令执行、输出捕获的最佳实践，以及失败时的降级策略（screenshot + 视觉分析）"
+description: "Playwright Browser MCP 与 xterm.js 终端交互方法论。当需要通过浏览器操作网页内嵌终端、CTF 靶场伪终端、Cloud Shell、在线 IDE 中的终端时使用。覆盖终端内容读取（5 种方法）、命令执行、输出捕获、screenshot 降级策略。只要目标页面中有任何形式的 Web 终端（xterm.js/hterm/jQuery Terminal），就应使用此技能"
 metadata:
   tags: "browser,playwright,xterm,web-terminal,xtermjs,浏览器终端"
   category: "tool"
 ---
 
-# Playwright Browser MCP × xterm.js 终端交互方法论
+# Playwright Browser MCP × Web 终端交互
 
-## 适用场景
-
-- 网页中嵌入了 xterm.js 终端（如 CTF 靶场、Cloud Shell、在线 IDE）
-- 需要通过浏览器工具在伪终端中执行命令并读取输出
-- 无法通过 SSH/直连方式访问目标终端
+Web 终端（xterm.js、hterm 等）在浏览器中渲染终端界面，但其输出通常用 canvas 或自定义 DOM 渲染，标准的 `browser_snapshot()` 只能看到 accessibility tree 中的最后一行 prompt。这是与 Web 终端交互时最大的痛点——需要用特定的 JS 方法才能可靠地读取终端输出。
 
 ## 核心原则
 
-1. **一次定型** — 找到有效的输出读取方法后，后续一直用同一个方法，不要每次换
-2. **3 次法则** — 一种读取方法最多尝试 3 次，3 次失败立即切换到下一种
-3. **screenshot 兜底** — JS 方法全部失败时，用截图 + 视觉分析作为最终手段
-4. **命令输出分离** — 用 marker 包裹命令输出，方便精确提取
+1. **一次定型** — 找到有效的读取方法后坚持用它，不要每次都换方法，因为来回切换会浪费大量 turn
+2. **3 次法则** — 一种方法最多试 3 次就切换下一种，避免在死路上消耗 turn
+3. **screenshot 兜底** — JS 方法全部失败时，截图+视觉分析是 100% 可靠的最终手段
+4. **marker 包裹** — 用 `echo "===START==="; cmd; echo "===END==="` 包裹命令输出，方便精确提取
 
 ---
 
@@ -155,6 +151,8 @@ Read(file_path='<output_dir>/term_output.png')
 ```
 
 然后通过图片内容视觉分析终端输出。
+
+**⚠️ 禁止使用 `fullPage=True`** — 全页截图体积极大（>1MB），会导致 SDK JSON buffer 溢出崩溃。只用默认的 viewport 截图。
 
 **优点**：100% 可靠，不依赖 DOM 结构
 **缺点**：消耗更多 tokens、只能看到可视区域
