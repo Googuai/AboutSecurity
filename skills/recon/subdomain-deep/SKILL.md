@@ -8,6 +8,10 @@ metadata:
 
 # 深度子域名挖掘方法论
 
+> **相关 skill**：被动情报收集 → `passive-recon`；目标画像 → `target-profiling`；子域名接管 → `subdomain-takeover`
+
+> **⛔ 深入参考**：subfinder/ksubdomain/amass 的完整参数、通配符过滤脚本、多工具联合流程见 `references/enumeration-tools.md`
+
 单一来源的子域名枚举通常只能覆盖 30-50% 的实际资产。本方法论联合三种独立来源交叉验证，最大化覆盖率。
 
 ## Phase 1: DNS 枚举

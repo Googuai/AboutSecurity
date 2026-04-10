@@ -8,6 +8,10 @@ metadata:
 
 # 社会工程学情报收集方法论
 
+> **相关 skill**：被动情报收集 → `passive-recon`；凭据喷洒 → `cred-spray`；目标画像 → `target-profiling`
+
+> **⛔ 深入参考**：钓鱼邮件模板、pretexting 话术、凭据猜测脚本、水坑攻击方法见 `references/social-engineering-techniques.md`
+
 社工攻击的成功率取决于前期情报质量。本技能聚焦于人员和组织层面的情报收集，为后续的钓鱼/水坑/凭据猜测提供弹药。
 
 ## Phase 1: 邮箱格式发现

@@ -8,6 +8,10 @@ metadata:
 
 # 被动 OSINT 情报收集方法论
 
+> **相关 skill**：子域名深度枚举 → `subdomain-deep`；目标画像分析 → `target-profiling`；社会工程学 → `social-engineering`
+
+> **⛔ 深入参考**：各引擎的完整查询语法和 API 调用方式见 `references/search-engine-syntax.md`
+
 被动侦察的核心优势是**零接触**——不会在目标日志中留下痕迹。适合渗透前期预研、红队侦察、或在授权范围外只能做被动收集的场景。
 
 ## Phase 1: 多引擎资产搜索
