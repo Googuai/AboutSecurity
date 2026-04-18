@@ -4,6 +4,7 @@ description: "主动式全流程资产侦察。当需要对目标进行从零到
 metadata:
   tags: "recon,subdomain,port,fingerprint,poc,扫描,侦察,资产发现,攻击面,渗透测试,nmap"
   category: "recon"
+  mitre_attack: "T1595,T1592,T1590,T1589"
 ---
 
 # 主动式全流程侦察方法论

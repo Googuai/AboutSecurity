@@ -72,3 +72,8 @@ cargo build --release --target x86_64-pc-windows-gnu
 
 ## Rust Loader 注意事项
 - Rust 错误处理：使用 Result / Option 类型，避免 unwrap panic
+
+## 关联技能
+
+- **沙箱逃逸实现** → `/skill:sandbox-evasion-implement`
+- **恶意软件分析方法论** → `/skill:malware-analysis-methodology`

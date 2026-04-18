@@ -4,6 +4,7 @@ description: "Docker 容器逃逸技术。当在 Docker 容器内部需要逃逸
 metadata:
   tags: "docker,container,escape,逃逸,容器,privileged,docker.sock,cgroup,runc,namespace,procfs,core_pattern,capabilities,dirtycow,dirtypipe"
   category: "cloud"
+  mitre_attack: "T1611,T1610,T1613"
 ---
 
 # Docker 容器逃逸

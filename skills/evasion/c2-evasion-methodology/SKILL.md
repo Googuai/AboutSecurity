@@ -4,6 +4,7 @@ description: "C2框架免杀方法论：分析 C2 源码、搜索检测规则(YA
 metadata:
   tags: "c2,evasion,yara,sigma,beacon,implant,detection-bypass,免杀,source-modification"
   category: "evasion"
+  mitre_attack: "T1071,T1573,T1090,T1572,T1001"
 ---
 
 # C2 框架免杀方法论
@@ -77,3 +78,9 @@ Phase 6: 文档
 ## 字符串混淆
 - 混淆后必须验证：编译通过、功能正常、不影响运行
 - 自动化处理：脚本批量替换，非手动逐个修改
+
+## 关联技能
+
+- **C2 Beacon 配置解析** → `/skill:c2-beacon-analysis`
+- **IOC 分析与对抗** → `/skill:ioc-analysis`
+- **威胁猎杀规避** → `/skill:threat-hunting-evasion`
