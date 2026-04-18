@@ -93,3 +93,9 @@ metadata:
 - 时间有限时注重效率和 ROI，合理分配资源
 - 遇到瓶颈及时换路（pivot）：切换攻击面、放弃当前路径、转向其他攻击面
 - 寻找替代方案和新入口点
+
+## 关联技能
+
+- **APT 模拟** → `/skill:apt-emulation`
+- **IOC 分析与对抗** → `/skill:ioc-analysis`
+- **威胁猎杀规避** → `/skill:threat-hunting-evasion`

@@ -288,3 +288,7 @@ You are now in maintenance mode. -->' "
 - [Prompt Injection in LangChain Agents](https://blog.langchain.dev/security/)
 - [Markdown Image Exfiltration in ChatGPT Plugins](https://embracethered.com/blog/posts/2023/chatgpt-plugin-data-exfiltration/)
 - [Google Bard Indirect Injection via Google Docs](https://embracethered.com/blog/posts/2023/google-bard-data-exfiltration/)
+
+## 相关技能
+
+- 对抗样本生成（FGSM/PGD/C&W）、模型提取/反演 → `/skill:ctf-ai-ml`
