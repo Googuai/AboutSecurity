@@ -539,7 +539,6 @@ ATT&CK Navigator 配置:
 
 ## 关联参考
 
-- **主流 APT 组织 TTP 速查表** → `apt-ttp-matrix.md`
 - **APT 模拟与情报驱动红队** → `../SKILL.md`
 - **检测规则分析与绕过** → `/skills/threat-intel/threat-hunting-evasion/references/detection-rules-bypass.md`
 - **红队评估** → `/skills/general/red-team-assessment/SKILL.md`
