@@ -78,3 +78,4 @@
 - https://github.com/mukul975/Anthropic-Cybersecurity-Skills
 - https://github.com/Pa55w0rd/secknowledge-skill
 - https://github.com/0xShe/PHP-Code-Audit-Skill
+- https://github.com/RuoJi6/java-audit-skills
