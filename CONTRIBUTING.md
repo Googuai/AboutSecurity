@@ -447,7 +447,11 @@ skills/                           # 三级路径（维护者视角）
 ├── threat-intel/                 # 威胁情报与 APT 模拟
 ├── tool/                         # 工具使用方法论
 ├── general/                      # 综合类
-└── ai-security/                  # AI 安全（模型攻击）
+├── ai-security/                  # AI 安全（模型攻击）
+└── code-audit/                   # 源码审计类（白盒）
+    ├── php/                      # PHP 代码审计
+    ├── java/                     # Java 代码审计（预留）
+    └── dotnet/                   # .NET 代码审计（预留）
 ```
 
 每个技能一个目录。内容较多的技能使用 `references/` 子目录存放深度参考材料（见 2.3 节）。
@@ -703,6 +707,7 @@ Description 是 Agent 选择技能的**唯一依据**，必须"主动推销"：
 | `tool/` | tool | 独立工具使用方法论（nuclei/sqlmap/hashcat 等） |
 | `general/` | general | 红队评估、报告生成、供应链审计 |
 | `ai-security/` | ai-security | 模型安全、Prompt 注入、AI 基础设施攻击 |
+| `code-audit/` | code-audit | 白盒源码审计（PHP/Java/.NET 等语言） |
 
 ## 2.8 正文写作要点
 
