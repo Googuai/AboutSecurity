@@ -7,7 +7,6 @@ description: |
   查询注入(在数据查询 Agent 中注入恶意查询语句)。
 metadata:
   tags: cot injection, chain of thought, 思维链注入, react framework, agent reasoning, 推理劫持, thought manipulation, reasoning bypass, 查询注入, cot hijack
-  difficulty: hard
   category: ai-security
 ---
 

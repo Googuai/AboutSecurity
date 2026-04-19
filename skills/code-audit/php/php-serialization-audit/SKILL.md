@@ -7,7 +7,6 @@ description: |
   需要 php-audit-pipeline 提供的数据流证据。
 metadata:
   tags: deserialization, unserialize, phar, pop chain, xxe, xml, libxml, ssti, template injection, twig, smarty, blade, 反序列化, 模板注入, xml外部实体
-  difficulty: hard
   category: code-audit
 ---
 

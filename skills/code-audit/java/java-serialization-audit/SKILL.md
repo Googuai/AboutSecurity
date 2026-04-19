@@ -8,7 +8,6 @@ description: |
   Java 反序列化是 Java 生态最具特色的高危漏洞类型，Gadget Chain 分析是核心难点。
 metadata:
   tags: deserialization, xxe, ssti, objectinputstream, gadget chain, ysoserial, xml, velocity, freemarker, thymeleaf, 反序列化, 模板注入, java source audit
-  difficulty: hard
   category: code-audit
 ---
 

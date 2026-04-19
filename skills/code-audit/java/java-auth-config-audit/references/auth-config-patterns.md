@@ -3,7 +3,6 @@ name: auth-config-patterns
 description: Java 认证与配置安全审计 — 6 类漏洞详细模式参考，含危险代码、安全代码与 EVID 证据模板。
 metadata:
   tags: authentication bypass, authorization, idor, jwt, shiro, spring security, 加密配置, 信息泄露, actuator, 业务逻辑
-  difficulty: medium
   category: code-audit
 ---
 

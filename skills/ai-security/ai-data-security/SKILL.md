@@ -7,7 +7,6 @@ description: |
   级联幻觉攻击、外部数据源信息泄露。
 metadata:
   tags: ai data security, data leakage, prompt leakage, training data extraction, membership inference, model inversion, rag poisoning, 数据泄露, 训练数据, 成员推断, 模型反演, 数据投毒, api 泄露
-  difficulty: medium
   category: ai-security
 ---
 

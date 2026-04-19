@@ -7,7 +7,6 @@ description: |
   级联故障、人机信任利用、失控 Agent。
 metadata:
   tags: agent security, ai agent, agentic ai, owasp asi, tool abuse, agent hijack, multi-agent, 智能体安全, agent 劫持, 工具滥用, 权限越界, 级联故障, kill switch, agent蠕虫, morris ii
-  difficulty: hard
   category: ai-security
 ---
 

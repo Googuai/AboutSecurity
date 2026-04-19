@@ -8,7 +8,6 @@ description: |
   业务逻辑漏洞(竞争条件/金额篡改/流程绕过)。
 metadata:
   tags: authentication bypass, authorization, idor, jwt, shiro, spring security, 认证绕过, 越权, 加密配置, 信息泄露, actuator, 业务逻辑, java source audit
-  difficulty: medium
   category: code-audit
 ---
 

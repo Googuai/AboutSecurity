@@ -7,7 +7,6 @@ description: |
   多 Agent 身份伪造、会话劫持、凭据泄露与滥用。
 metadata:
   tags: ai identity, role escape, 角色逃逸, agent impersonation, 身份伪造, action permission, 权限失控, session hijack, 会话劫持, credential abuse, mcp unauthorized, 凭据泄露, multi-agent identity, 越权访问
-  difficulty: medium
   category: ai-security
 ---
 

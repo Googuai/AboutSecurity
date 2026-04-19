@@ -7,7 +7,6 @@ description: |
   需要 php-audit-pipeline 提供的数据流证据(EVID_*)作为审计输入。
 metadata:
   tags: php injection, sql injection, command injection, nosql, ldap injection, ssrf, eval, preg_replace, 注入审计, 代码注入, php source audit
-  difficulty: medium
   category: code-audit
 ---
 

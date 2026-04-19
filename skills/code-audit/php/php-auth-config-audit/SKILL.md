@@ -7,7 +7,6 @@ description: |
   安全配置(CORS/错误暴露/调试模式)、密码学误用(弱哈希/ECB/硬编码密钥)、业务逻辑(竞争条件/支付篡改)。
 metadata:
   tags: authentication, authorization, idor, config, cors, debug mode, cryptography, weak hash, business logic, 认证绕过, 授权, 越权, 配置审计, 密码学, 业务逻辑
-  difficulty: medium
   category: code-audit
 ---
 

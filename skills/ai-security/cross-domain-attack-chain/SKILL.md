@@ -7,7 +7,6 @@ description: |
   和 AI→Web(注入生成存储型 XSS/Agent 执行 SQL 命令/工具读取敏感文件/沙箱逃逸 RCE)。
 metadata:
   tags: cross domain, web to ai, ai to web, 跨域攻击, attack chain, rag poisoning, xss ai, ssrf model api, agent sql injection, sandbox escape, 攻击链
-  difficulty: hard
   category: ai-security
 ---
 

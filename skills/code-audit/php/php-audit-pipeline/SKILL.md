@@ -7,7 +7,6 @@ description: |
   核心机制: 证据合约系统(EVID_*)防止 AI 幻觉误报，所有漏洞结论必须有数据流证据支撑。
 metadata:
   tags: php audit, code audit, 代码审计, white box, 白盒, source code, 源码审计, pipeline, evidence contract, 证据合约, route mapping, data flow, sink, source, php security
-  difficulty: hard
   category: code-audit
 ---
 

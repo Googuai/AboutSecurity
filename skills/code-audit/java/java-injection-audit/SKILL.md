@@ -7,7 +7,6 @@ description: |
   需要 java-audit-pipeline 提供的数据流证据(EVID_*)作为审计输入。
 metadata:
   tags: java injection, sql injection, command injection, ssrf, spel, ognl, ldap injection, mybatis, hibernate, jpa, nosql, 注入审计, java source audit
-  difficulty: medium
   category: code-audit
 ---
 

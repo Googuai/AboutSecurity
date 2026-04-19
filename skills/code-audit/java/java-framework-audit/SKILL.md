@@ -8,7 +8,6 @@ description: |
   这些是 Java 生态中出现频率最高、影响面最广的框架级漏洞。
 metadata:
   tags: spring, struts2, shiro, fastjson, jackson, mybatis, ognl, spel, actuator, rememberme, spring cloud, 框架漏洞, java source audit
-  difficulty: hard
   category: code-audit
 ---
 

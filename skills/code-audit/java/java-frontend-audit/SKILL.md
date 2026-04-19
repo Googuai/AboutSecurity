@@ -7,7 +7,6 @@ description: |
   需要 java-audit-pipeline 提供的数据流证据。
 metadata:
   tags: xss, csrf, open redirect, crlf injection, session, jsp, thymeleaf, freemarker, spring security, 前端安全, java source audit
-  difficulty: medium
   category: code-audit
 ---
 

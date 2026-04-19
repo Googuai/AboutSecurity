@@ -8,7 +8,6 @@ description: |
   Symfony(Debug Bar/YAML 解析/安全投票器)、Yii2(RBAC/ActiveRecord 注入)、CodeIgniter(全局 XSS/CSRF Token)。
 metadata:
   tags: laravel, thinkphp, wordpress, symfony, yii, codeigniter, 框架审计, mass assignment, blade xss, wp plugin, think rce
-  difficulty: medium
   category: code-audit
 ---
 

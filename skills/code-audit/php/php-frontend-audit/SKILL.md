@@ -7,7 +7,6 @@ description: |
   需要 php-audit-pipeline 提供的数据流证据。
 metadata:
   tags: xss, csrf, open redirect, crlf injection, session, cookie, 跨站脚本, 跨站请求伪造, 会话安全, http response splitting, 前端安全审计
-  difficulty: medium
   category: code-audit
 ---
 

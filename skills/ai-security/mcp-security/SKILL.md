@@ -7,7 +7,6 @@ description: |
   跨 Server 攻击、Token 窃取、Schema 操纵、上下文溢出。
 metadata:
   tags: mcp, model context protocol, tool poisoning, mcp server, mcp tool, agent tool, 工具投毒, 指令覆盖, shadow tool, rug pull, 隐藏指令, ansi escape, zero-width, unicode steganography, mcp security, tool description injection
-  difficulty: hard
   category: ai-security
 ---
 

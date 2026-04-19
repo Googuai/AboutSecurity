@@ -7,7 +7,6 @@ description: |
   需要 php-audit-pipeline 提供的数据流证据。
 metadata:
   tags: file upload, file read, file write, path traversal, zip slip, lfi, rfi, include, 文件上传, 任意读取, 任意写入, toctou, symlink, 路径穿越
-  difficulty: medium
   category: code-audit
 ---
 

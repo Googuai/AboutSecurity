@@ -7,7 +7,6 @@ description: |
   需要 java-audit-pipeline 提供的数据流证据。
 metadata:
   tags: file upload, file read, file write, path traversal, zip slip, 文件上传, 任意读取, 任意写入, java nio, multipartfile, 路径穿越
-  difficulty: medium
   category: code-audit
 ---
 
