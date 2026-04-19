@@ -1,6 +1,6 @@
 ---
 name: impacket-toolkit
-description: "Impacket Windows 协议工具集。当需要通过 Windows 协议（SMB/MSRPC/LDAP/Kerberos/WMI/DCOM/MSSQL）进行远程操作时使用。Impacket 提供了完整的 Windows 协议 Python 实现，核心工具包括 secretsdump（导出凭据）、psexec/smbexec/wmiexec/dcomexec（远程命令执行）、GetNPUsers/GetUserSPNs（Kerberos 攻击）、ntlmrelayx（NTLM 中继）。这是域渗透和 Windows 横向移动的基础工具集。涉及 Windows 远程执行、凭据导出、Kerberos 攻击、NTLM 中继、SMB 操作的场景都应使用此技能"
+description: "Impacket Windows 协议工具集。当需要通过 SMB/Kerberos/WMI/DCOM/MSSQL 等 Windows 协议进行远程操作时使用。覆盖 secretsdump 凭据导出、psexec/wmiexec 远程执行、Kerberos 攻击、NTLM 中继，是域渗透和 Windows 横向移动的基础工具集"
 metadata:
   tags: "impacket,secretsdump,psexec,wmiexec,smbexec,dcomexec,ntlmrelayx,kerberos,smb,windows,域,横向移动,凭据,GetNPUsers,GetUserSPNs"
   category: "tool"

