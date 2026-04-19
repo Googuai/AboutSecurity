@@ -11,20 +11,30 @@ modules:
     path: Payload/
     description: "XSS/SQLi/SSRF/XXE/LFI 等 Payload 库"
   skills:
-    path: Skills/
+    path: skills/
     description: "AI Agent 技能剧本 (Playbook) 库"
     categories:
       - recon
       - exploit
+      - ctf
       - postexploit
       - lateral
       - cloud
+      - evasion
+      - malware
+      - dfir
+      - threat-intel
+      - tool
       - general
+      - ai-security
+      - code-audit
   tools:
     path: Tools/
     description: "外部工具声明式配置 (YAML) 库"
     categories:
       - scan
-      - fuzz
-      - poc
       - osint
+      - poc
+      - brute
+      - fuzz
+      - postexploit

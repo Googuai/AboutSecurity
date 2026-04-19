@@ -1,6 +1,6 @@
 # AboutSecurity 资源贡献规范
 
-本文档定义了 `Tools/` 和 `Skills/` 目录下 YAML 文件的编写规范，供社区贡献者和 AI 参考。
+本文档定义了 `Tools/` 和 `skills/` 目录下文件的编写规范，供社区贡献者和 AI 参考。
 
 ---
 
@@ -12,17 +12,27 @@ AboutSecurity/
 │   ├── scan/                 # 资产探测类
 │   ├── osint/                # 情报搜索类
 │   ├── poc/                  # 漏洞扫描类
-│   ├── brute/                # 爆破/Fuzz 类
+│   ├── brute/                # 爆破类
+│   ├── fuzz/                 # Web Fuzz 类
+│   └── postexploit/          # 后渗透类
+├── skills/                   # AI Agent 技能方法论
+│   ├── recon/                # 侦察类
+│   ├── exploit/              # 漏洞利用类
+│   ├── ctf/                  # CTF 竞赛类
 │   ├── postexploit/          # 后渗透类
-│   └── util/                 # 辅助工具类
-├── Skills/                   # AI Agent 技能方法论
-│   ├── recon/                # 侦察类 (5)
-│   ├── exploit/              # 漏洞利用类 (26)
-│   ├── ctf/                  # CTF 竞赛类 (5)
-│   ├── postexploit/          # 后渗透类 (6)
-│   ├── lateral/              # 内网渗透类 (3)
-│   ├── cloud/                # 云环境类 (2)
-│   └── general/              # 综合类 (4)
+│   ├── lateral/              # 内网渗透/横向移动类
+│   ├── cloud/                # 云环境类
+│   ├── evasion/              # 免杀/检测对抗类
+│   ├── malware/              # 恶意软件分析
+│   ├── dfir/                 # 取证对抗（红队视角）
+│   ├── threat-intel/         # 威胁情报与 APT 模拟
+│   ├── tool/                 # 工具使用方法论
+│   ├── general/              # 综合类
+│   ├── ai-security/          # AI 安全（模型攻击）
+│   └── code-audit/           # 源码审计类（白盒）
+│       ├── php/              # PHP 代码审计
+│       ├── java/             # Java 代码审计（预留）
+│       └── dotnet/           # .NET 代码审计（预留）
 └── manifest.yaml
 ```
 
@@ -207,9 +217,9 @@ output:
 | `scan` | 资产探测 | nmap, masscan, rustscan |
 | `osint` | 情报搜索 | subfinder, amass, theHarvester |
 | `poc` | 漏洞扫描 | nuclei, xray |
-| `brute` | 爆破/Fuzz | dirsearch, ffuf, hydra |
+| `brute` | 爆破 | hydra, dirsearch, spray |
+| `fuzz` | Web Fuzz | ffuf, wfuzz |
 | `postexploit` | 后渗透 | linpeas, winpeas |
-| `util` | 辅助工具 | curl, jq, whatweb |
 
 ## 1.6 command_template 模板语法
 
@@ -460,7 +470,7 @@ skills/                           # 三级路径（维护者视角）
 
 本仓库维护时使用三级路径 `skills/<category>/<name>/SKILL.md`，便于按攻击阶段分类管理。
 
-AI Agent 实际使用时通过 `sync-skills.sh` 扁平化为二级路径 `.claude/skills/<name>/SKILL.md`，所有 skill 在同一层级，Agent 通过 `description` 字段匹配触发，**不存在跨分类跳转**。
+AI Agent 实际使用时通过 `sync-claude-skills.sh` 扁平化为二级路径 `.claude/skills/<name>/SKILL.md`，所有 skill 在同一层级，Agent 通过 `description` 字段匹配触发，**不存在跨分类跳转**。
 
 ```
 维护者视角:  skills/exploit/web-method/sql-injection-methodology/SKILL.md
@@ -815,9 +825,10 @@ metadata:
 # 三、提交流程
 
 1. Fork 本仓库
-2. 在对应目录创建 YAML 文件
-3. 按上述规范检查清单自查
-4. 提交 PR，标题格式：`[Tool] 添加 xxx` 或 `[Skill] 添加 xxx`
+2. 在对应目录下创建文件，遵循上述规范
+3. 按对应的检查清单（1.8 或 2.10）自查
+4. 若新增分类，需同步更新 `CONTRIBUTING.md` 中的目录结构和 category 枚举
+5. 提交 PR，标题格式：`[Tool] 添加 xxx` 或 `[Skill] 添加 xxx`
 
 ---
 
@@ -861,10 +872,10 @@ metadata:
 
 ```bash
 # 测试单个 Skill
-python scripts/bench-skill.py --skill Skills/exploit/sql-injection-methodology
+python scripts/bench-skill.py --skill skills/exploit/sql-injection-methodology
 
 # 多次运行（方差分析）
-python scripts/bench-skill.py --skill Skills/exploit/sql-injection-methodology --runs 3
+python scripts/bench-skill.py --skill skills/exploit/sql-injection-methodology --runs 3
 
 # 测试所有有 evals 的 Skills
 python scripts/bench-skill.py --all
@@ -898,4 +909,4 @@ A: 在 `constraints.requires_root: true` 标注，同时在 `description` 中说
 A: 建议拆成多个，如 `nmap-scan.yaml`（端口扫描）、`nmap-vuln.yaml`（漏洞脚本扫描），各有不同的 parameters 和 command_template。
 
 **Q: Skill 的 prompt 可以引用外部工具吗？**
-A: 可以。直接写 `ext_xxx` 工具名，Agent 会自动调用。
+A: 可以。在正文中写 `ext_xxx` 工具名，当消费端程序实现工具自动调用后，Agent 即可自动匹配并执行对应工具。（此功能依赖消费入口程序实现，当前阶段仅作为 Skill 编写约定。）
